@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -17,7 +18,8 @@ import { LogComponent } from './log/log.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
