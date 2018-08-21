@@ -1,14 +1,5 @@
-<nav>
-  <div class="nav-wrapper">
-      <a [routerLink]="['']" class="brand-logo">Print Portal</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-          <li> <a [routerLink]="['upload']">Upload</a></li>
-          <li> <a [routerLink]="['print']">Print</a></li>
-          <li> <a [routerLink]="['log']"></a></li>
-      </ul>
-  </div>
-</nav>
+<app-nav></app-nav>
+
 <div class="container">
   <router-outlet></router-outlet>
 </div>
