@@ -7,10 +7,14 @@ import {ApiService} from "../services/api.service";
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  printUrl: string;
+  toolTemp: string;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.printUrl = 'http://localhost:3000/printers/ping';
+
     setInterval(() => {
       this.pingPrinter('lulzbot', this.printUrl);
     }, 2000);

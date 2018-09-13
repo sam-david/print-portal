@@ -10,6 +10,8 @@ declare var google: any;
 export class PrintComponent implements OnInit {
   toolTemp: string;
   bedTemp: string;
+  targetBedTemp: string;
+  targetToolTemp: string;
   printUrl: string;
   pieChartData: any;
   printerState: string;
@@ -19,8 +21,7 @@ export class PrintComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    // this.printUrl = 'http:///10.0.1.4/api/files';
-    // this.printUrl = 'http://lulzocto.samdavid.rocks/api/files';
+    // this.printUrl = 'http:///10.0.1.4/api/files';    // this.printUrl = 'http://lulzocto.samdavid.rocks/api/files';
     this.printUrl = 'http://localhost:3000/printers/ping';
     // this.printUrl = 'https://www.google.com/';
     console.log("Print page")
@@ -86,7 +87,11 @@ export class PrintComponent implements OnInit {
         var currentToolTemp = res.temperature.tool0.actual;
         this.toolTemp = currentToolTemp;
         var currentBedTemp = res.temperature.bed.actual;
+        var targetToolTemp = res.temperature.tool0.target;
+        var targetBedTemp = res.temperature.bed.target;
         this.bedTemp = currentBedTemp;
+        this.targetToolTemp = targetToolTemp;
+        this.targetBedTemp = targetBedTemp;
         // this.toolTempHistory.push(currentToolTemp);
         // console.log('history', that.toolTempHistory);
         this.printerState = res.state.text;
